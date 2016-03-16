@@ -1,0 +1,13 @@
+function test( ){
+  console.log( "TEST" );
+  $.getJSON("/index", function( data ) {
+    console.log( data );
+  });
+}
+
+window.onload = function( ) {
+  setInterval( "test( )", 500 );
+}
+
+console.log( <%= @currentMessage %> );
+$("#messages").append("<li> <%= @currentMessage %> </li>");

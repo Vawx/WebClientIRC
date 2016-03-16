@@ -8,13 +8,12 @@ class IndexController < ApplicationController
   end
 
   define_method :read do |message|
-    @message_log.push message
-     if @message_log.length > 10
-      @message_log.clear
-     else
-       puts @message_log.length
+    @currentMessage = message
+    puts "READ: " + @currentMessage
+    respond_to do |format|
+      format.js
     end
-  end
+end
 
   define_method :index do
     render :index

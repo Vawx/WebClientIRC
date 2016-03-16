@@ -40,7 +40,6 @@ class IRCBot
     begin
     message = @socket.read_nonblock(1024)
     @controller.read message
-    puts message
     if message.match /^PING :(.*)$/
       say "PONG #{$~[1]}"
     end
